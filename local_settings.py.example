@@ -1,0 +1,27 @@
+"""
+Este arquivo contém as configurações locais para trabalhar em desenvolvimento.
+Você deverá copiá-lo ao lado de "settings.py", renomear para "local_settings.py" e NÃO colocá-o no repositório.
+Informe ao time de desenvolvimento a existência deste arquivo.
+No final de "settings.py", digite o seguinte código:
+
+try:
+    from .local_settings.py import *
+except ImportError:
+    pass
+"""
+
+
+import os
+
+
+DEBUG = True
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
