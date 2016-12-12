@@ -13,7 +13,10 @@ class IndexView(TemplateView):
 
 index = IndexView.as_view()
 
+
 def contact(request):
+
+    import os
     success = False
     form = ContactForm(request.POST or None)
     if form.is_valid():
@@ -21,7 +24,9 @@ def contact(request):
         success = True
     context = {
         'form': form,
-        'success': success
+        'success': success,
+        'SECRET_KEY': os.getenv('SECRET_KEY'),
+        'DEBUG': os.getenv('DEBUG')
     }
     return render(request, 'contact.html', context)
 
