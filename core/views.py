@@ -25,8 +25,9 @@ def contact(request):
     context = {
         'form': form,
         'success': success,
-        'SECRET_KEY': os.getenv('SECRET_KEY'),
-        'DEBUG': os.getenv('DEBUG')
+        # testando variáveis de ambiente no Heroku
+        # 'SECRET_KEY': os.getenv('SECRET_KEY'),
+        # 'DEBUG': os.getenv('DEBUG')
     }
     return render(request, 'contact.html', context)
 
