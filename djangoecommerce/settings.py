@@ -25,7 +25,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-print(SECRET_KEY, DEBUG)
+# print(SECRET_KEY, DEBUG)
 
 ALLOWED_HOSTS = ['*']
 
@@ -142,6 +142,11 @@ EMAIL_HOST = ''
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL = 'admin@djangoecommerce.com'
+
+# auth
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
+
 
 # try:
 #     from local_settings.py import *
